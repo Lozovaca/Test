@@ -1,0 +1,24 @@
+{% block content %}
+
+
+<h1> Predikcija cene nekretnine </h1>
+
+{% if predvidjena_cena %}
+    <p> Predvidjena cena: {{predvidjena_cena}} </p>
+
+{% else %}
+    <p> Popunite formu:</p>
+    <br/>
+    <form method = "POST">
+        {{form.kvadratura.label}}
+        {{form.kvadratura ()}}
+        {{form.lokacija.label}}
+        {{form.lokacija ()}}
+        {{form.sobnost.label}}
+        {{form.sobnost ()}}
+        {{ form.submit()}}
+
+    </form>
+{% endif %}
+
+{% endblock %}
